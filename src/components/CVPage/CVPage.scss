@@ -1,0 +1,204 @@
+$font-main: "Calibri", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+$color-text-main: #000;
+$color-text-muted: #8f8f8f;
+$color-divider: #000;
+$color-bg-page: #f2f2f2;
+$color-bg-cv: #ffffff;
+
+body {
+  margin: 0;
+  font-family: $font-main;
+  color: $color-text-main;
+}
+
+.cv-page {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  background-color: $color-bg-page;
+}
+
+.cv {
+  width: 100%;
+  max-width: 794px;
+  aspect-ratio: 794 / 1123;
+  background-color: $color-bg-cv;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__name {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 10px 0 10px;
+  }
+
+  &__contacts {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__contact {
+    font-size: 12px;
+    color: $color-text-muted;
+    padding: 0 6px;
+    position: relative;
+    line-height: 1.2;
+    text-decoration: none;
+
+    &:not(:last-child)::after {
+      content: "|";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $color-text-muted;
+    }
+  }
+
+  &__section {
+    margin-bottom: 24px;
+  }
+
+  &__section-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    padding-bottom: 2px;
+    border-bottom: 1.6px solid $color-divider;
+  }
+
+  &__row {
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+
+  &__date {
+    width: 90px;
+    font-size: 12px;
+    color: $color-text-muted;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+
+  &__job {
+    flex: 1;
+  }
+
+  &__job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__job-title {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &__job-place {
+    font-size: 12px;
+    color: $color-text-muted;
+    white-space: nowrap;
+  }
+
+  &__job-role {
+    font-size: 12px;
+    font-style: italic;
+    color: $color-text-muted;
+    margin: 6px 0 4px;
+  }
+
+  &__job-list {
+    margin: 0 0 4px;
+    padding-left: 28px;
+    font-size: 12px;
+    color: $color-text-muted;
+    line-height: 1.6;
+
+    li {
+      padding-left: 6px;
+    }
+  }
+
+  &__position,
+  &__label,
+  &__value {
+    font-size: 12px;
+    color: $color-text-muted;
+  }
+
+  &__label {
+    width: 96px;
+  }
+
+  &__value {
+    flex: 1;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 820px) {
+  .cv {
+    padding: 20px;
+    aspect-ratio: auto;
+  }
+
+  .cv__row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cv__date {
+    width: 100%;
+  }
+
+  .cv__job-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .cv__contacts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cv__contact::after {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .cv__name {
+    font-size: 24px;
+  }
+
+  .cv__section-title {
+    font-size: 13px;
+  }
+
+  .cv__job-title,
+  .cv__job-place,
+  .cv__job-role,
+  .cv__job-list,
+  .cv__label,
+  .cv__value {
+    font-size: 11px;
+  }
+}

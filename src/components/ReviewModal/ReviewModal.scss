@@ -1,0 +1,78 @@
+$font-main: "Calibri", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+.review-modal {
+    font-family: $font-main;
+
+    &__overlay {
+        position: fixed;
+        inset: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    &__container {
+        width: 400px;
+        max-width: 90%;
+        padding: 24px;
+
+        background-color: #fff;
+        border-radius: 6px;
+        box-sizing: border-box;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    &__textarea {
+        width: 100%;
+        margin: 24px 0;
+        padding: 8px;
+
+        font-size: 14px;
+        font-family: inherit;
+
+        resize: none;
+        box-sizing: border-box;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    &__button {
+        min-width: 80px;
+        padding: 6px 12px;
+
+        font-size: 14px;
+        font-family: inherit;
+
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #f5f5f5;
+        }
+
+        &--primary {
+            background-color: #000;
+            border-color: #000;
+            color: #fff;
+
+            &:hover {
+                background-color: #383838;
+            }
+        }
+    }
+}
