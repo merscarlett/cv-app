@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# CV App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a **React + TypeScript** project that displays a professional CV for Claudette Lening.  
+It includes a sidebar for adding comments and a modal for reviewing feedback. The design is optimized to look like an A4 page, making it easy to test and print.
 
-Currently, two official plugins are available:
+## Features
+- Modern CV layout using **React** and **SCSS**
+- **Comments sidebar** with localStorage persistence
+- **Review modal** for adding comments
+- Mobile-friendly and print-ready A4 format
+- Easy to customize with your own content
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies
+- React 18 + TypeScript  
+- SCSS for styling  
+- LocalStorage for comment persistence  
+- Vite for fast development and build
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📂 Project Structure
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+cv-app/
+├─ public/                            # Static files
+│  └─ favicon.png                      # Favicon for the site
+├─ src/
+│  ├─ components/                      # All React components
+│  │  ├─ CVPage/
+│  │  │  ├─ CVPage.tsx                 # Main CV component
+│  │  │  └─ CVPage.scss
+│  │  ├─ CommentsSidebar/
+│  │  │  ├─ CommentsSidebar.tsx        # Sidebar for comments
+│  │  │  └─ CommentsSidebar.scss
+│  │  └─ ReviewModal/
+│  │     ├─ ReviewModal.tsx            # Modal for adding comments
+│  │     └─ ReviewModal.scss
+│  ├─ App.tsx                          # Root App component
+│  └─ main.tsx                          # React root entry point
+├─ index.html                           # HTML template
+├─ vite.config.ts                        # Vite configuration
+├─ package.json
+├─ tsconfig.json
+├─ .gitignore
+└─ README.md
 ```
+## How to Run
+1. git clone https://github.com/merscarlett/cv-app.git
+2. cd cv-app
+3. npm install
+4. npm run dev
+
